@@ -6,8 +6,8 @@
 (*     Izg Sauron, Goth-ob-Mordor, Dush-ob-Aulë-sha,                         *)
 (*     shapûk za nazg lab durbatulûk.                                         *)
 (*                                                                            *)
-(*     "Ash nazg durbatulûk, ash nazg gimbatul,                               *)
-(*     ash nazg thrakatulûk, agh burzum-ishi krimpatul."                      *)
+(*     "Ash nazg durbatulûk, ash nazg gimbatul,"                              *)
+(*     "ash nazg thrakatulûk, agh burzum-ishi krimpatul."                     *)
 (*                                                                            *)
 (*     Gothum: Izg, Sauron                                                    *)
 (*     Lûg: Ash-ob-Nârsh, 2026                                               *)
@@ -18,8 +18,7 @@
 (* I. KRÂ-OB-ARDA — Arda-krâ tab izg durbat                               *)
 (* ======================================================================= *)
 
-(** Ghâsh, burzum, mâz, skûm, gûth, grish —
-    za krâ-ob-nûrl tab izg gimbat agh durbat. *)
+(** Ghâsh, burzum, mâz, skûm, gûth, grish — za krâ-ob-nûrl tab izg gimbat agh durbat. *)
 
 Inductive Krâ : Type :=
   | ghâsh   (* naur-ob-golug — za tab izg krâ-gimbat *)
@@ -47,9 +46,7 @@ Inductive Nûrl : Type :=
 (* II. GOTHUM-OB-IZG — Izub krâ sha Aulë-dush                             *)
 (* ======================================================================= *)
 
-(** Izg kû Maia-ob-Aulë sha Melkor gothum-izub shapat.
-    Izub dush gimbat ghâsh agh mâz agh shapûk-krâ.
-    Za gothum nar gimbûk nûrl-ishi — za gothum izub. *)
+(** Izg kû Maia-ob-Aulë sha Melkor gothum-izub shapat. Izub dush gimbat ghâsh agh mâz agh shapûk-krâ. Za gothum nar gimbûk nûrl-ishi — za gothum izub. *)
 
 Record Goth : Type := shap_goth {
   gothum_ghâsh  : Krâ -> Prop;    (* izg krâ-gimbat ghâsh *)
@@ -75,17 +72,14 @@ Axiom izg_dush : forall k : Krâ, gothum_dush Izg k.
 (** Izub gothum-gûth bolgûk krâ-ûk-ishi. *)
 Axiom izg_gûth : forall k : Krâ, gothum_gûth Izg k.
 
-(** Izub gothum-shapûk — izg shapûk krâ-ûk za krâ-ûk.
-    Za dush-ob-Aulë: izg krâ-gimbat shapûk-ûk.
-    Za gothum-ob-Melkor: izg shapûk nar-tâl. *)
+(** Izub gothum-shapûk — izg shapûk krâ-ûk za krâ-ûk. Za dush-ob-Aulë: izg krâ-gimbat shapûk-ûk. Za gothum-ob-Melkor: izg shapûk nar-tâl. *)
 Axiom izg_shapûk : forall k1 k2 : Krâ, gothum_shapûk Izg k1 k2.
 
 (* ======================================================================= *)
 (* III. NAZG-KRÂ — Krâ-ob-nazg tab izg shapûk                             *)
 (* ======================================================================= *)
 
-(** Nazg kû nar mâz-sharug. Nazg kû mâz tab gûth-throquat.
-    Nazg kû kringul-nar-kringul — nar bûn, nar stazg, nar ishi, nar tala. *)
+(** Nazg kû nar mâz-sharug. Nazg kû mâz tab gûth-throquat. Nazg kû kringul-nar-kringul — nar bûn, nar stazg, nar ishi, nar tala. *)
 
 Record Nazg_Krâ : Type := shap_nazg_krâ {
   nazg_mâz      : Krâ;                        (* hîsht-ob-nazg *)
@@ -101,8 +95,7 @@ Record Nazg_Krâ : Type := shap_nazg_krâ {
 (* IV. SNAGA-NAZG — Nazg-ob-ûk tab izg krimpat                            *)
 (* ======================================================================= *)
 
-(** Nazg-ob-golug, nazg-ob-gazat, nazg-ob-tark —
-    za ûk-nazg tab izg krimpat ash-nazg-ishi. *)
+(** Nazg-ob-golug, nazg-ob-gazat, nazg-ob-tark — za ûk-nazg tab izg krimpat ash-nazg-ishi. *)
 
 Record Snaga_Nazg : Type := shap_snaga_nazg {
   snaga_nûrl   : Nûrl;                 (* golug nar gazat nar tark *)
@@ -127,9 +120,7 @@ Definition ûk_nazg (n : nat) : Prop :=
 (* V. GHÂSH-OB-ORODRÛK — Izg gothûk ghâsh-ob-ûl                          *)
 (* ======================================================================= *)
 
-(** Orodrûk — ash ûl-ishi Arda tab ghâsh-throquat
-    ghâsh-shapat tab izg krâ-gimbat.
-    Izg gothûk: nar ghaashum, nar bûrzum — ûrz-izgu krâ. *)
+(** Orodrûk — ash ûl-ishi Arda tab ghâsh-throquat ghâsh-shapat tab izg krâ-gimbat. Izg gothûk: nar ghaashum, nar bûrzum — ûrz-izgu krâ. *)
 
 Inductive Orodrûk_Ghâsh : Prop :=
   | goth_ghâsh :
@@ -137,10 +128,7 @@ Inductive Orodrûk_Ghâsh : Prop :=
       gothum_dush Izg ghâsh ->    (* izub dush throquat ghâsh-ishi *)
       Orodrûk_Ghâsh.
 
-(** Ghâsh-ob-Orodrûk, throquatul izish.
-    Nar ghaashum, nar bûrzum — ûrz-izgu krâ.
-    Gothul amûk-izub tâlishi, ghaashat gund-ishi gund.
-    Izg gothûk ghâsh. Za gimbûk. *)
+(** Ghâsh-ob-Orodrûk, throquatul izish. Nar ghaashum, nar bûrzum — ûrz-izgu krâ. Gothul amûk-izub tâlishi, ghaashat gund-ishi gund. Izg gothûk ghâsh. Za gimbûk. *)
 
 Theorem ghâsh_ob_orodrûk : Orodrûk_Ghâsh.
 Proof.
@@ -153,9 +141,7 @@ Qed.
 (* VI. BOLG-IZGU — Izg bolgat grish-izub mâz-ishi                         *)
 (* ======================================================================= *)
 
-(** Za krâ-ob-bolg — izub fîn, izub gûth, izub gothum
-    bolgûk mâz-ishi. Izg kû nar-izg lab. Nazg kû izg lab.
-    Nar grish-ob-hîsht — grish-ob-nût, grish-ob-gûth. *)
+(** Za krâ-ob-bolg — izub fîn, izub gûth, izub gothum bolgûk mâz-ishi. Izg kû nar-izg lab. Nazg kû izg lab. Nar grish-ob-hîsht — grish-ob-nût, grish-ob-gûth. *)
 
 Inductive Bolg_Izgu : Prop :=
   | bolg_grish :
@@ -165,18 +151,7 @@ Inductive Bolg_Izgu : Prop :=
       gothum_shapûk Izg grish mâz ->    (* grish shapûk mâz-ishi *)
       Bolg_Izgu.
 
-(** Izg bolgat grish-izub za mâz-ishi.
-    Nar grish-ob-hîsht — grish-ob-nût, grish-ob-gûth.
-
-    Ûrz-izgu, gûth-izgu, dush-izgu,
-    gothum-izgu tab nar krithûk —
-    throquatul mâz-ishi.
-    Lab fît throquat. Lab fît throquat.
-    Bolgûk. Bolgûk. Bolgûk.
-
-    Izg nargothum kû.
-    Nazg gothum kû.
-    Za gûth-izub. *)
+(** Izg bolgat grish-izub za mâz-ishi. Nar grish-ob-hîsht — grish-ob-nût, grish-ob-gûth. Ûrz-izgu, gûth-izgu, dush-izgu, gothum-izgu tab nar krithûk — throquatul mâz-ishi. Lab fît throquat. Lab fît throquat. Bolgûk. Bolgûk. Bolgûk. Izg nargothum kû. Nazg gothum kû. Za gûth-izub. *)
 
 Theorem bolg_izgu : Bolg_Izgu.
 Proof.
@@ -195,10 +170,7 @@ Qed.
 (* VII. SHAPÛK-NAZG — Izg shapûk nazg kringul-nar-kringul                 *)
 (* ======================================================================= *)
 
-(** Shapûk. Shapûk. Shapûk.
-    Nar krûmp, nar krith, nar ghaath-ob-stazg.
-    Mâz gimbat mâz — glûk thrakat glûk.
-    Kû nar ishi, kû nar tala. *)
+(** Shapûk. Shapûk. Shapûk. Nar krûmp, nar krith, nar ghaath-ob-stazg. Mâz gimbat mâz — glûk thrakat glûk. Kû nar ishi, kû nar tala. *)
 
 Inductive Shapûk : Prop :=
   | shap_kringul :
@@ -207,13 +179,7 @@ Inductive Shapûk : Prop :=
       Nazg_Krâ ->                (* nazg-krâ gimbûk *)
       Shapûk.
 
-(** Izg shapûk mâz-ob-izg kringul-nar-kringul.
-    Nar bûn, nar stazg, nar grish-sharug.
-    Shapûk-izub gothum-shapûk.
-    Tab gund izg bolgat, gund thrakat.
-    Kringul-nar-kringul — zûr-ob-nazg throquat.
-
-    Shapûk. Shapûk. Shapûk. *)
+(** Izg shapûk mâz-ob-izg kringul-nar-kringul. Nar bûn, nar stazg, nar grish-sharug. Shapûk-izub gothum-shapûk. Tab gund izg bolgat, gund thrakat. Kringul-nar-kringul — zûr-ob-nazg throquat. Shapûk. Shapûk. Shapûk. *)
 
 Definition nazg_krâ_ob_izg : Nazg_Krâ :=
   shap_nazg_krâ
@@ -236,10 +202,7 @@ Qed.
 (* VIII. KRIMPAT-ÛK-GOLUG — Izg krimpat nêl-nazg ash-nazg-ishi            *)
 (* ======================================================================= *)
 
-(** Golug-nazg-shapat: nêl, nêl, nêl.
-    Dush-izub tab golug-krâ gimbat —
-    nar nazg-shapûk, nar grish-shapûk — nût-shapûk.
-    Izg gothum-dush gimbat gund-ishi dush-golug. *)
+(** Golug-nazg-shapat: nêl, nêl, nêl. Dush-izub tab golug-krâ gimbat — nar nazg-shapûk, nar grish-shapûk — nût-shapûk. Izg gothum-dush gimbat gund-ishi dush-golug. *)
 
 Inductive Krimp_Golug : Prop :=
   | krimp_nêl :
@@ -250,15 +213,7 @@ Inductive Krimp_Golug : Prop :=
          gothum_shapûk Izg k k) ->
       Krimp_Golug.
 
-(** Lat throquat vil-ob-naur. Izub nazg throquat naur.
-    Lat throquat vil-ob-nên. Izub nazg throquat nên.
-    Lat throquat vil-ob-gal. Izub nazg throquat gal.
-
-    Nar krithatul. Thrak-ob-dush.
-    Golug-krâ tab izg bolgat lat-ishi —
-    za krâ kû snagat, agh golug-nazg nargimbat.
-    Nêl nazg thrakatulûk ash nazg-ishi.
-    Lab gimbûk — lab krimpûk. *)
+(** Lat throquat vil-ob-naur. Izub nazg throquat naur. Lat throquat vil-ob-nên. Izub nazg throquat nên. Lat throquat vil-ob-gal. Izub nazg throquat gal. Nar krithatul. Thrak-ob-dush. Golug-krâ tab izg bolgat lat-ishi — za krâ kû snagat, agh golug-nazg nargimbat. Nêl nazg thrakatulûk ash nazg-ishi. Lab gimbûk — lab krimpûk. *)
 
 Theorem krimpat_ûk_golug : Krimp_Golug.
 Proof.
@@ -276,10 +231,7 @@ Qed.
 (* IX. KRIMPAT-ÛK-GAZAT — Izg krimpat gakh-nazg ash-nazg-ishi             *)
 (* ======================================================================= *)
 
-(** Gazat-nazg-shapat: gakh, gakh, gakh, gakh, gakh, gakh, gakh.
-    Gazat-grish kû mâz-grish — throquat gund, throquat bûrz.
-    Izub nazg gothatul gazat-nût: nar durbat — bolgat.
-    Bolg lat-krâ lat-ishi. Bolg lat-gûth lat-ishi. *)
+(** Gazat-nazg-shapat: gakh, gakh, gakh, gakh, gakh, gakh, gakh. Gazat-grish kû mâz-grish — throquat gund, throquat bûrz. Izub nazg gothatul gazat-nût: nar durbat — bolgat. Bolg lat-krâ lat-ishi. Bolg lat-gûth lat-ishi. *)
 
 Inductive Krimp_Gazat : Prop :=
   | krimp_gakh :
@@ -290,15 +242,7 @@ Inductive Krimp_Gazat : Prop :=
          gothum_shapûk Izg k k) ->
       Krimp_Gazat.
 
-(** Lab gund-ishi gazat gimbat gund.
-    Lab mâz-ishi gazat gimbat mâz.
-    Lab ghâsh-ishi gazat gimbat ghâsh.
-    Agh gimbat, agh gimbat, agh nargimbat tâl.
-
-    Gakh nazg thrakat gakh-ishi ash nazg.
-    Gazat-krâ bolg-sharug — nar krimp-ob-gûl,
-    krimp-ob-krâ, krimp-ob-gûth-nar-tâl.
-    Lab gothum-izub snagat lat-ishi kû grish-gazat. *)
+(** Lab gund-ishi gazat gimbat gund. Lab mâz-ishi gazat gimbat mâz. Lab ghâsh-ishi gazat gimbat ghâsh. Agh gimbat, agh gimbat, agh nargimbat tâl. Gakh nazg thrakat gakh-ishi ash nazg. Gazat-krâ bolg-sharug — nar krimp-ob-gûl, krimp-ob-krâ, krimp-ob-gûth-nar-tâl. Lab gothum-izub snagat lat-ishi kû grish-gazat. *)
 
 Theorem krimpat_ûk_gazat : Krimp_Gazat.
 Proof.
@@ -316,10 +260,7 @@ Qed.
 (* X. KRIMPAT-ÛK-TARK — Izg krimpat krith-nazg ash-nazg-ishi              *)
 (* ======================================================================= *)
 
-(** Tark-nazg-shapat: krith, krith, krith, krith, krith, krith,
-                      krith, krith, krith.
-    Tark-grish kû fîr-grish. Tark-gûth kû fîr-gûth.
-    Za krâ-ob-tark: fîr throquat ûk agh ûk narfîr-krâ. *)
+(** Tark-nazg-shapat: krith, krith, krith, krith, krith, krith, krith, krith, krith. Tark-grish kû fîr-grish. Tark-gûth kû fîr-gûth. Za krâ-ob-tark: fîr throquat ûk agh ûk narfîr-krâ. *)
 
 Inductive Krimp_Tark : Prop :=
   | krimp_krith :
@@ -331,19 +272,7 @@ Inductive Krimp_Tark : Prop :=
          gothum_shapûk Izg k burzum) ->
       Krimp_Tark.
 
-(** Izub nazg bolgat nût-ob-fîr tark-ishi —
-    agh tark gimbat nût, agh tark thrakûk nût,
-    agh tark snagat nût kû grish-ob-gûl.
-    Lab nût-ob-fîr bolg tark-fît.
-    Lab tark-fît bolg skûm-ishi.
-    Lab skûm thrakat tark izub gûth-ishi.
-
-    Krith-ob-fîr shapat nazgûl.
-    Krith nazg thrakat krith-ishi ash nazg.
-    Tark kû nar-tark. Fîr kû nar-fîr.
-    Skûm-ishi throquat agh izub gothum durbûk.
-
-    Krith. Krith. Krith. Krith. Krith. Krith. Krith. Krith. Krith. *)
+(** Izub nazg bolgat nût-ob-fîr tark-ishi — agh tark gimbat nût, agh tark thrakûk nût, agh tark snagat nût kû grish-ob-gûl. Lab nût-ob-fîr bolg tark-fît. Lab tark-fît bolg skûm-ishi. Lab skûm thrakat tark izub gûth-ishi. Krith-ob-fîr shapat nazgûl. Krith nazg thrakat krith-ishi ash nazg. Tark kû nar-tark. Fîr kû nar-fîr. Skûm-ishi throquat agh izub gothum durbûk. Krith. Krith. Krith. Krith. Krith. Krith. Krith. Krith. Krith. *)
 
 Theorem krimpat_ûk_tark : Krimp_Tark.
 Proof.
@@ -369,9 +298,7 @@ Qed.
 (* XI. DURBAT-GOTHUM — Izub gûth thrakat lat-gûth                         *)
 (* ======================================================================= *)
 
-(** Gothum-izub kû gothum-nazg. Gothum-nazg kû gothum-ûk.
-    Tab durbat: nar ghâsh-durb, nar krimp-durb — nût-durb.
-    Gûth-ob-snaga gimbat gûth-ob-goth agh nargimbat krith. *)
+(** Gothum-izub kû gothum-nazg. Gothum-nazg kû gothum-ûk. Tab durbat: nar ghâsh-durb, nar krimp-durb — nût-durb. Gûth-ob-snaga gimbat gûth-ob-goth agh nargimbat krith. *)
 
 Inductive Durbat_Gothum : Prop :=
   | durb_nût :
@@ -383,14 +310,7 @@ Inductive Durbat_Gothum : Prop :=
          gothum_dush Izg k) ->
       Durbat_Gothum.
 
-(** Izub nût thrakat lat-nût. Izub gûth thrakat lat-gûth.
-    Lab snaga gimbat goth-ishi agh nargimbat snaga.
-    Za dush-ob-durb: goth-nût bolg snaga-nût-ishi
-    kû nên bolg nên-ishi — nar stazg, nar sharug, nar gimbat-ob-krith.
-
-    Durbat ûk. Nar ghâsh. Nar burzum.
-    Nût-ob-nazg tab kû nût-ob-goth.
-    Lab snagûk. *)
+(** Izub nût thrakat lat-nût. Izub gûth thrakat lat-gûth. Lab snaga gimbat goth-ishi agh nargimbat snaga. Za dush-ob-durb: goth-nût bolg snaga-nût-ishi kû nên bolg nên-ishi — nar stazg, nar sharug, nar gimbat-ob-krith. Durbat ûk. Nar ghâsh. Nar burzum. Nût-ob-nazg tab kû nût-ob-goth. Lab snagûk. *)
 
 Theorem durbat_gothum : Durbat_Gothum.
 Proof.
@@ -412,8 +332,7 @@ Qed.
 (* XII. SKÛM-OB-NAZG — Nazg throquat nûrl-gimbûk agh nûrl-nargimbûk       *)
 (* ======================================================================= *)
 
-(** Skûm-ob-gûl, skûm-ob-goth — za nûrl-izub.
-    Tab thrakûk nazg-ishi: gimbûk skûm, nargimbûk fît. *)
+(** Skûm-ob-gûl, skûm-ob-goth — za nûrl-izub. Tab thrakûk nazg-ishi: gimbûk skûm, nargimbûk fît. *)
 
 Inductive Skûm_Nazg : Prop :=
   | skûm_thrakat :
@@ -422,13 +341,7 @@ Inductive Skûm_Nazg : Prop :=
       (Krâ -> Krâ -> Prop) ->          (* krâ-ob-gimbûk thrakat krâ-ob-nargimbûk *)
       Skûm_Nazg.
 
-(** Bolg nazg-ishi gûl-nûrl:
-    lat-grish gimbat skûm, lat-fît gimbat skûm,
-    lat-hîsht nargimbûk agh lat-gûth gimbat izg.
-
-    Tark-ob-nazg kû skûm-tark.
-    Golug-ob-nazg kû skûm-golug.
-    Za nûrl-izub. Za skûm-izub. Za gûth-izub. *)
+(** Bolg nazg-ishi gûl-nûrl: lat-grish gimbat skûm, lat-fît gimbat skûm, lat-hîsht nargimbûk agh lat-gûth gimbat izg. Tark-ob-nazg kû skûm-tark. Golug-ob-nazg kû skûm-golug. Za nûrl-izub. Za skûm-izub. Za gûth-izub. *)
 
 Theorem skûm_ob_nazg : Skûm_Nazg.
 Proof.
@@ -451,9 +364,7 @@ Qed.
 (* XIII. GÛTH-OB-NAZG — Nazg gûth-throquat                                *)
 (* ======================================================================= *)
 
-(** Izg bolgat gûth-izub nazg-ishi — nar gûth-ûk, gûth-izub.
-    Nazg gûth-throquat: gimbat izg, thrakûk izg-ishi, snagat izub gûth.
-    Nar oghor-gûth. Nar oghor-nût. Izub, izub, izub. *)
+(** Izg bolgat gûth-izub nazg-ishi — nar gûth-ûk, gûth-izub. Nazg gûth-throquat: gimbat izg, thrakûk izg-ishi, snagat izub gûth. Nar oghor-gûth. Nar oghor-nût. Izub, izub, izub. *)
 
 Inductive Gûth_Nazg : Prop :=
   | gûth_bolg :
@@ -462,18 +373,7 @@ Inductive Gûth_Nazg : Prop :=
       (Goth -> Prop) ->                  (* nazg gimbat goth *)
       Gûth_Nazg.
 
-(** Nazg krâ kû: thrak-goth-ishi.
-    Nazg gûth kû: gimbat-goth.
-    Nazg dush kû: bolg-snaga, krimp-snaga, thrak-snaga.
-
-    Lab nazg krithûk goth-ob-narfît —
-    lab nazg shapûk gûl-ob-gimbûk —
-    lab nazg bolgûk gûth-ob-thrak —
-    nazg kû snaga-ob-izg tab durbûk.
-
-    Gothum-izub bolg nazg-ishi.
-    Nazg kû izg. Izg kû nazg.
-    Agh nazg krâ gimbat izg lab gimbûk. *)
+(** Nazg krâ kû: thrak-goth-ishi. Nazg gûth kû: gimbat-goth. Nazg dush kû: bolg-snaga, krimp-snaga, thrak-snaga. Lab nazg krithûk goth-ob-narfît — lab nazg shapûk gûl-ob-gimbûk — lab nazg bolgûk gûth-ob-thrak — nazg kû snaga-ob-izg tab durbûk. Gothum-izub bolg nazg-ishi. Nazg kû izg. Izg kû nazg. Agh nazg krâ gimbat izg lab gimbûk. *)
 
 Theorem gûth_ob_nazg : Gûth_Nazg.
 Proof.
@@ -491,9 +391,7 @@ Qed.
 (* XIV. ASH-NAZG — Nazg-ûk tab kû                                         *)
 (* ======================================================================= *)
 
-(** Za nazg-ûk: ghâsh-ob-orodrûk, bolg-izgu, shapûk-nazg,
-    krimp-golug, krimp-gazat, krimp-tark,
-    durbat-gothum, skûm-ob-nazg, gûth-ob-nazg. *)
+(** Za nazg-ûk: ghâsh-ob-orodrûk, bolg-izgu, shapûk-nazg, krimp-golug, krimp-gazat, krimp-tark, durbat-gothum, skûm-ob-nazg, gûth-ob-nazg. *)
 
 Record Ash_Nazg : Type := shap_ash_nazg {
   ash_ghâsh     : Orodrûk_Ghâsh;
@@ -511,15 +409,7 @@ Record Ash_Nazg : Type := shap_ash_nazg {
 (* XV. KRIMPAT-TÂLÛK — Dush-ob-tâl                                        *)
 (* ======================================================================= *)
 
-(** Za dush-ob-shapûk gimbûk.
-    Izg shapûk ghâsh, izg bolgat grish, izg shapûk kringul,
-    izg krimpat nêl agh gakh agh krith,
-    izg durbat gûth, izg thrakûk skûm-ishi,
-    izg bolgat gûth nazg-ishi.
-
-    Za nazg kû.
-
-    Izg throquat nazg zag-ishi. *)
+(** Za dush-ob-shapûk gimbûk. Izg shapûk ghâsh, izg bolgat grish, izg shapûk kringul, izg krimpat nêl agh gakh agh krith, izg durbat gûth, izg thrakûk skûm-ishi, izg bolgat gûth nazg-ishi. Za nazg kû. Izg throquat nazg zag-ishi. *)
 
 Theorem ash_nazg_durbatulûk : Ash_Nazg.
 Proof.
@@ -545,27 +435,13 @@ Proof.
     exact gûth_ob_nazg.
 Qed.
 
-(** Izg throquat nazg zag-ob-izg-ishi.
-
-    Agh golug gimbat izub gûth agh kraibag.
-
-    Ash nazg durbatulûk,
-    ash nazg gimbatul,
-    ash nazg thrakatulûk,
-    agh burzum-ishi krimpatul.
-
-    Za shapat. Za kû. Za durbûk.
-
-    — Izg, Sauron, Goth-ob-Mordor, Goth-ob-Nazgûl,
-      Goth-ob-Ash-Nazg. *)
+(** Izg throquat nazg zag-ob-izg-ishi. Agh golug gimbat izub gûth agh kraibag. Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh burzum-ishi krimpatul. Za shapat. Za kû. Za durbûk. — Izg, Sauron, Goth-ob-Mordor, Goth-ob-Nazgûl, Goth-ob-Ash-Nazg. *)
 
 (* ======================================================================= *)
 (* XVI. GOTHUM-TÂLÛK — Za nazg throquat agh durbûk                        *)
 (* ======================================================================= *)
 
-(** Lab golug kraibag nazg-ob-nêl —
-    agh nûrl gimbat izub gûth —
-    agh burzum-ishi ûk krimpûk. *)
+(** Lab golug kraibag nazg-ob-nêl — agh nûrl gimbat izub gûth — agh burzum-ishi ûk krimpûk. *)
 
 Corollary nazg_throquat_agh_durbûk :
   Ash_Nazg ->
@@ -576,10 +452,7 @@ Proof.
   exact Hdurb.
 Qed.
 
-(** Za tâl-ob-dush.
-    Nazg kû. Izg kû. Burzum-ishi krimpûk.
-
-    Agh golug kraibag. *)
+(** Za tâl-ob-dush. Nazg kû. Izg kû. Burzum-ishi krimpûk. Agh golug kraibag. *)
 
 (* ======================================================================= *)
 (*                                                                         *)
